@@ -1,21 +1,30 @@
 (function() {
-  'use strict';
+    'use strict';
 
-  angular
-    .module('samplePractice')
-    .config(routerConfig);
+    angular
+        .module('samplePractice')
+        .config(routerConfig);
 
-  /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      });
+    /** @ngInject */
+    function routerConfig($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('main', {
+                url: '/main',
+                views: {
+                    header: {
+                        template: '<acme-navbar creation-date="main.creationDate"></acme-navbar>'
+                    },
+                    signup: {
+                        template: '<registration-directive></registration-directive>'
+                    }
+                }
+            })
+            .state('login', {
+                url: '/login',
+                template: '<login-directive></login-directive>'
+            });
 
-    $urlRouterProvider.otherwise('/');
-  }
+        $urlRouterProvider.otherwise('/main');
+    }
 
 })();

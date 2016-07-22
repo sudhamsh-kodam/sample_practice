@@ -4,26 +4,33 @@
         <form class="col-md-4 col-md-offset-4" name="registrationForm" novalidate>
             <fieldset class="form-group" ng-class="{ 'has-error' : registrationForm.firstname.$touched && registrationForm.firstname.$invalid}">
                 <label for="registrationFirstName">First Name</label>
-                <input type="text" class="form-control" name="firstname" ng-model="firstname" id="registrationFirstName" placeholder="first name" required>
+                <input type="text" class="form-control" name="firstname" ng-model="vm.firstname" id="registrationFirstName" placeholder="First Name" required>
                 <span class="help-block" ng-show="registrationForm.firstname.$touched && registrationForm.firstname.$invalid">please enter your first name</span>
             </fieldset>
+            {{vm.user.firstname}}
             <fieldset class="form-group" ng-class="{ 'has-error' : registrationForm.lastname.$touched && registrationForm.lastname.$invalid}">
                 <label for="registrationLastName">Last Name</label>
-                <input type="text" class="form-control" name="lastname" ng-model="lastname" id="registrationLastName" placeholder="last name" required>
+                <input type="text" class="form-control" name="lastname" ng-model="vm.lastname" id="registrationLastName" placeholder="Last Name" required>
                 <span class="help-block" ng-show="registrationForm.lastname.$touched && registrationForm.lastname.$invalid">please enter your last name</span>
-            </fieldset>   
-            <fieldset class="form-group" ng-class="{ 'has-error' : registrationForm.email.$error && registrationForm.email.$invalid}">
-                <label for="registrationEmail">Email</label>
-                <input type="email" class="form-control" name="email" ng-model="email" id="registrationEmail" placeholder="enter mail id" required>
-                <span class="help-block" ng-show="registrationForm.email.$error.required && registrationForm.email.$invalid">please enter valid email id</span>
-            </fieldset>                   
-            <fieldset class="form-group" ng-class="{ 'has-error' : registrationForm.password.$touched && registrationForm.password.$invalid}">
-                <label for="registrationEmail">Email</label>
-                <input type="password" class="form-control" ng-model="password" id="registrationPassword" placeholder="Enter your password">
-                <span class="help-block" ng-show="registrationForm.password.$touched && registrationForm.password.$invalid">please enter your first name</span>
             </fieldset>
+            {{vm.user.lastname}}
+            <fieldset class="form-group" ng-class="{ 'has-error' : registrationForm.username.$touched && registrationForm.username.$invalid}">
+                <label for="registrationUsername">User Name</label>
+                <input type="text" class="form-control" name="username" ng-model="vm.username" id="registrationUserName" placeholder="User Name" required>
+                <span class="help-block" ng-show="registrationForm.username.$touched && registrationForm.username.$invalid">please enter your user name</span>
+            </fieldset>
+            <fieldset class="form-group" ng-class="{ 'has-error' : registrationForm.userEmail.$touched && registrationForm.userEmail.$invalid}">
+                <label for="registrationEmail">Email</label>
+                <input type="email" class="form-control" name="userEmail" ng-model="vm.userEmail" id="registrationEmail" placeholder="Enter Mail Id" required>
+                <span class="help-block" ng-show="registrationForm.userEmail.$touched && registrationForm.userEmail.$invalid">please enter valid email id</span>
+            </fieldset>                   
+          <fieldset class="form-group" ng-class="{ 'has-error' : registrationForm.userPassword.$touched && registrationForm.userPassword.$invalid}">
+                <label for="registrationPassword">Email</label>
+                <input type="password" class="form-control" name="userPassword" ng-model="vm.userPassword" id="registrationPassword" placeholder="enter password" required>
+                <span class="help-block" ng-show="registrationForm.userPassword.$touched && registrationForm.userPassword.$invalid">please enter valid password</span>
+            </fieldset>  
             <fieldset class="form-group ">
-                <button class="btn btn-primary centered" type="submit">Submit</button>
+                <button class="btn btn-primary centered" ng-click="click()" type="submit">Submit</button>
             </fieldset>
         </form>
     </div>

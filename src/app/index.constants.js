@@ -4,7 +4,9 @@
 
   angular
     .module('samplePractice')
-    .constant('malarkey', malarkey)
-    .constant('moment', moment);
+    .constant('malarkey', malarkey)    
+    .constant('url',{
+    	apiUrl : 'http://localhost:3000/db'
+    });
 
 })();

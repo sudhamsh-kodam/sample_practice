@@ -1,1 +1,21 @@
-
+<acme-navbar creation-date="main.creationDate"></acme-navbar>
+<div class="container">
+    <div class="row">
+        <h1 class="text-center">Login</h1>
+        <form class="col-md-4 col-md-offset-4" name="loginForm" novalidate>                    
+            <fieldset class="form-group" ng-class="{ 'has-error' : loginForm.username.$touched && loginForm.username.$invalid}">
+                <label for="registrationUsername">User Name</label>
+                <input type="text" class="form-control" name="username" ng-model="username" id="registrationUserName" placeholder="User Name" required>
+                <span class="help-block" ng-show="loginForm.username.$touched && loginForm.username.$invalid">please enter your user name</span>
+            </fieldset>                            
+          <fieldset class="form-group" ng-class="{ 'has-error' : loginForm.userPassword.$touched && loginForm.userPassword.$invalid}">
+                <label for="registrationPassword">Email</label>
+                <input type="password" class="form-control" name="userPassword" ng-model="userPassword" id="registrationPassword" placeholder="enter password" required>
+                <span class="help-block" ng-show="loginForm.userPassword.$touched && loginForm.userPassword.$invalid">please enter valid password</span>
+            </fieldset>  
+            <fieldset class="form-group ">
+                <button class="btn btn-primary centered" disabled="{{loginForm.$invalid}}" type="submit">Login</button>
+            </fieldset>
+        </form>
+    </div>
+</div>
