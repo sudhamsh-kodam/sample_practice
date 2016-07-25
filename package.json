@@ -1,7 +1,10 @@
 {
   "name": "samplePractice",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.14.0",
+    "lowdb": "^0.13.1"
+  },
   "scripts": {
     "test": "gulp test"
   },

@@ -1,9 +1,32 @@
 {
+  "users": [
+    {
+      "id": 1
+    },
+    {
+      "firstname": "sudhamsh",
+      "lastname": "kodam",
+      "username": "sudhamsh-kodam",
+      "userEmail": "sudhamsh@gmail.com",
+      "userPassword": 1234,
+      "id": 2
+    }
+  ],
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "typicode"
+  }
 }
